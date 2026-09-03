@@ -1,0 +1,22 @@
+KLASSE Insect ERBT VON Area2D
+    DEKLARIERE health ALS Gleitkommazahl INITIALISIERT MIT 3.0
+
+    FUNKTION _ready()
+        DRUCKE "Insekt gespawnt. Start-HP: " + health
+    ENDE FUNKTION
+
+    FUNKTION _on_input_event(viewport, event, shape_idx)
+        WENN event IST linker Mausklick UND gedrückt DANN
+            AUFRUF take_damage(1.0)
+        ENDE WENN
+    ENDE FUNKTION
+
+    FUNKTION take_damage(amount)
+        health = health - amount
+        
+        WENN health <= 0.0 DANN
+            DRUCKE "Insekt eliminiert!"
+            AUFRUF GameState.add_money(5.0)
+            AUFRUF queue_free()
+        ENDE WENN
+    ENDE FUNKTION

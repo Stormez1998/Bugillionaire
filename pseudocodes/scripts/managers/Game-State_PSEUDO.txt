@@ -1,0 +1,10 @@
+KLASSE GameState ERBT VON Node
+    DEKLARIERE current_money ALS Gleitkommazahl = 0.0
+    DEKLARIERE prestige_multiplier ALS Gleitkommazahl = 1.0
+
+    ÖFFENTLICHE FUNKTION add_money(amount)
+        DEKLARIERE final_amount = amount * prestige_multiplier
+        current_money = current_money + final_amount
+        DRUCKE "[GameState] Geld erhalten: " + final_amount + " | Neuer Kontostand: " + current_money
+    ENDE FUNKTION
+ENDE KLASSE

@@ -1,0 +1,19 @@
+KLASSE MainLevel ERBT VON Node2D
+    LADE insect_scene = "res://scenes/entities/Insect.tscn"
+
+    FUNKTION _ready()
+        DRUCKE "MainLevel gestartet. Spawner ist aktiv."
+    ENDE FUNKTION
+
+    FUNKTION _on_timer_timeout()
+        DEKLARIERE insect_instance = INSTANZIIERE(insect_scene)
+        
+        DEKLARIERE random_x = ZUFALLSZAHL_ZWISCHEN(50.0, 1100.0)
+        DEKLARIERE random_y = ZUFALLSZAHL_ZWISCHEN(50.0, 600.0)
+        
+        insect_instance.position = VEKTOR2(random_x, random_y)
+        
+        HINZUFÜGE_KIND(insect_instance)
+        DRUCKE "Neues Insekt gespawnt an Position: X=" + random_x + " Y=" + random_y
+    ENDE FUNKTION
+ENDE KLASSE

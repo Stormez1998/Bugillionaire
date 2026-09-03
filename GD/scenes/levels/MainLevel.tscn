@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bqsnulerknhw4"]
+
+[ext_resource type="Script" uid="uid://b4f3x3nbenyo0" path="res://scripts/levels/MainLevel.gd" id="1_ngxpg"]
+
+[node name="MainLevel" type="Node2D" unique_id=2085024147]
+script = ExtResource("1_ngxpg")
+
+[node name="Timer" type="Timer" parent="." unique_id=233460367]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

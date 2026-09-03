@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dpkh7u7gjvg0f"]
+
+[ext_resource type="Script" uid="uid://cwc7jo1vwvhm3" path="res://scripts/entities/Insect.gd" id="1_8e3he"]
+[ext_resource type="Texture2D" uid="uid://bph3y2mwnqukp" path="res://icon.svg" id="1_o6f1p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jk7c4"]
+size = Vector2(128, 127.5)
+
+[node name="Insect" type="Area2D" unique_id=733645916]
+script = ExtResource("1_8e3he")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1054112084]
+texture = ExtResource("1_o6f1p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1117917847]
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_jk7c4")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

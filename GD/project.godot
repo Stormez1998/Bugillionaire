@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Neues Spiel"
+run/main_scene="uid://bqsnulerknhw4"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameState="*uid://xqe0v66t0ana"
 
 [display]
 
