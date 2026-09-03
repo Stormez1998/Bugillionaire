@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dpkh7u7gjvg0f"]
 
 [ext_resource type="Script" uid="uid://cwc7jo1vwvhm3" path="res://scripts/entities/Insect.gd" id="1_8e3he"]
-[ext_resource type="Texture2D" uid="uid://bph3y2mwnqukp" path="res://icon.svg" id="1_o6f1p"]
+[ext_resource type="Texture2D" uid="uid://bph3y2mwnqukp" path="res://assets/sprites/icon.svg" id="1_o6f1p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk7c4"]
 size = Vector2(128, 127.5)
