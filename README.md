@@ -21,7 +21,6 @@ Der Kern des Spiels basiert auf einem kontinuierlichen Kreislauf, der sich in de
 * **Projektmanagement (Tududi):** [Tududi Bugillionaire Board](https://projekt.datorsida.de/project/sbrpksrm4g7tszq-bugillionaire)
 * **Versionsverwaltung (Forgejo):** [Forgejo Repository](https://dev.datorsida.de/LeFix_Dev/Bugillionaire)
 * **Lokaler Speicherort:** `P:\Projekte & Assets\Projekte Godot\Godot 4.x.x Projekte\Projekte\Bugillionaire`
-* **Entwicklungsbegleitung:** Aktueller Chat (KI-Collaborator)
 
 ---
 
