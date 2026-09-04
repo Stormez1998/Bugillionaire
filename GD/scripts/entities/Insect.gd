@@ -1,10 +1,16 @@
 extends Area2D
 
 var health: float = 3.0
+var max_health: float = 3.0
+
+@onready var life_bar: ProgressBar = $LifeBar
+
 
 func _ready() -> void:
-	# Bestätigt, dass das Objekt erfolgreich geladen wurde
-	print("Insekt gespawnt. Start-HP: ", health)
+	# Initialisiert den Lebensbalken mit den korrekten Werten
+	life_bar.max_value = max_health
+	life_bar.value = health
+	life_bar.show_percentage = false
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	# Prüft, ob das Event ein Mausklick (linke Taste) ist und gerade heruntergedrückt wird
@@ -13,12 +19,8 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 func take_damage(amount: float) -> void:
 	health -= amount
-	print("Klick registriert! Schaden: ", amount, " | Verbleibende HP: ", health)
+	life_bar.value = health # Balken aktualisieren
 	
 	if health <= 0.0:
-		print("Insekt eliminiert! Sende Belohnung an GameState...")
-		
-		# Ruft die globale Methode auf und übergibt z.B. 5.0 als Belohnung
 		GameState.add_money(5.0) 
-		
 		queue_free()

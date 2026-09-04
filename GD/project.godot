@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bugillionaire"
-run/main_scene="uid://bqsnulerknhw4"
+run/main_scene="uid://brdt48wna3oys"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/sprites/icon.svg"
 

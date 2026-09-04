@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b4f3x3nbenyo0" path="res://scripts/levels/MainLevel.gd" id="1_ngxpg"]
 [ext_resource type="PackedScene" uid="uid://cqcsbnglcyyui" path="res://scenes/ui/UI.tscn" id="2_mk31d"]
 [ext_resource type="PackedScene" uid="uid://bc260yk2xpu0o" path="res://scenes/ui/PauseMenu.tscn" id="3_uc4y6"]
+[ext_resource type="PackedScene" uid="uid://bvnuaeyy612ov" path="res://scenes/entities/Hand.tscn" id="4_xvlhx"]
 
 [node name="MainLevel" type="Node2D" unique_id=2085024147]
 script = ExtResource("1_ngxpg")
@@ -11,13 +12,15 @@ script = ExtResource("1_ngxpg")
 wait_time = 1.5
 autostart = true
 
+[node name="Hand" parent="InsectSpawner" unique_id=1326126058 instance=ExtResource("4_xvlhx")]
+
 [node name="Ui" parent="." unique_id=1479590 instance=ExtResource("2_mk31d")]
 
 [node name="PauseMenu" parent="." unique_id=1887962413 instance=ExtResource("3_uc4y6")]
 visible = false
 
 [node name="RoundTimer" type="Timer" parent="." unique_id=1558781570]
-wait_time = 30.0
+wait_time = 10.0
 one_shot = true
 autostart = true
 

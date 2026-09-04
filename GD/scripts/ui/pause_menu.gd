@@ -22,6 +22,10 @@ func toggle_pause() -> void:
 		hide()
 		print("[PauseMenu] Spiel FORTGESETZT.")
 
-func _on_button_pressed() -> void:
+func _on_btn_game_resume_pressed() -> void:
 	print("[PauseMenu] Weiter-Button geklickt.")
 	toggle_pause()
+
+func _on_btn_game_quit_pressed() -> void:
+	print("Spiel wird beendet...")
+	get_tree().quit()

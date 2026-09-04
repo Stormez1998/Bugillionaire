@@ -8,10 +8,10 @@ script = ExtResource("1_d2gw2")
 [node name="MoneyLabel" type="Label" parent="." unique_id=1151308318]
 offset_right = 67.0
 offset_bottom = 23.0
-text = "Zeit: 60s"
+text = "Geld: "
 
 [node name="TimeLabel" type="Label" parent="." unique_id=1541020582]
 offset_top = 29.0
 offset_right = 57.0
 offset_bottom = 52.0
-text = "Zeit: 60s"
+text = "Zeit: "

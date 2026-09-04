@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bvnuaeyy612ov"]
+
+[ext_resource type="Script" uid="uid://cw3v6eikic0wj" path="res://scripts/entities/hand.gd" id="1_wyapm"]
+[ext_resource type="Texture2D" uid="uid://b84x2n5nb0mh5" path="res://assets/sprites/Handv1.png" id="2_03ryf"]
+
+[node name="Hand" type="Node2D" unique_id=1326126058]
+script = ExtResource("1_wyapm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1047972867]
+texture = ExtResource("2_03ryf")

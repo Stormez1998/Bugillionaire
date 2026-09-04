@@ -28,3 +28,11 @@ func _on_round_timer_timeout() -> void:
 	insect_spawner.stop() # Stoppt den umbenannten Spawner
 	time_label.text = "Zeit: 0s"
 	print("Runde beendet! InsectSpawner wurde gestoppt.")
+
+#DEV-FEATURE! Instant restart mit "R"-Taste
+func _unhandled_input(event: InputEvent) -> void:
+	# Prüft, ob die Aktion "ui_text_completion_replace" (oft 'R') gedrückt wurde 
+	# Alternativ in den Project Settings einen eigenen Input "restart" anlegen.
+	if event is InputEventKey and event.keycode == KEY_R and event.pressed:
+		print("Instant Neustart ausgelöst!")
+		get_tree().reload_current_scene()
