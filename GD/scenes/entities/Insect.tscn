@@ -9,12 +9,12 @@ size = Vector2(128, 127.5)
 [node name="Insect" type="Area2D" unique_id=733645916]
 script = ExtResource("1_8e3he")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1054112084]
-texture = ExtResource("1_o6f1p")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1117917847]
 position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_jk7c4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1054112084]
+texture = ExtResource("1_o6f1p")
 
 [node name="LifeBar" type="ProgressBar" parent="." unique_id=1448884961]
 offset_left = -64.0

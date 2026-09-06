@@ -15,3 +15,16 @@ offset_top = 29.0
 offset_right = 57.0
 offset_bottom = 52.0
 text = "Zeit: "
+
+[node name="PlayerLifeBar" type="ProgressBar" parent="." unique_id=1003364023]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -163.5
+offset_top = -27.0
+offset_right = 163.5
+grow_horizontal = 2
+grow_vertical = 0
+show_percentage = false

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://8ty7pqwp2b6y"]
+
+[ext_resource type="PackedScene" uid="uid://dpkh7u7gjvg0f" path="res://scenes/entities/Insect.tscn" id="1_8fs4m"]
+[ext_resource type="Script" uid="uid://dh6b5076olkey" path="res://scripts/entities/SpikedInsect.gd" id="2_eky1y"]
+
+[node name="SpikedInsect" unique_id=733645916 instance=ExtResource("1_8fs4m")]
+script = ExtResource("2_eky1y")
+
+[node name="Sprite2D" parent="." index="1" unique_id=1054112084]
+modulate = Color(1, 0.15294118, 0.16078432, 1)
+self_modulate = Color(1, 0.15294118, 0.16078432, 1)

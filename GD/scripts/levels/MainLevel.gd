@@ -1,6 +1,7 @@
 extends Node2D
 
-var insect_scene: PackedScene = preload("res://scenes/entities/Insect.tscn")
+var basic_insect_scene: PackedScene = preload("res://scenes/entities/Insect.tscn")
+var spiked_insect_scene: PackedScene = preload("res://scenes/entities/SpikedInsect.tscn")
 
 # Aktualisierte Referenzen auf die Nodes im Szenenbaum
 @onready var insect_spawner: Timer = $InsectSpawner
@@ -17,7 +18,13 @@ func _process(_delta: float) -> void:
 # Hinweis: Stelle sicher, dass das timeout()-Signal des InsectSpawner
 # mit dieser aktualisierten Funktion verbunden ist.
 func _on_insect_spawner_timeout() -> void:
-	var insect_instance: Area2D = insect_scene.instantiate()
+	var insect_instance: Area2D
+	# 20% Chance, dass ein Dornenkäfer spawnt
+	if randf() <= 0.2:
+		insect_instance = spiked_insect_scene.instantiate()
+	else:
+		insect_instance = basic_insect_scene.instantiate()
+	#Positionierung
 	var random_x: float = randf_range(50.0, 1100.0)
 	var random_y: float = randf_range(50.0, 600.0)
 	
