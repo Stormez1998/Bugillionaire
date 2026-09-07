@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://mlqbc7btatt1"]
 
-[ext_resource type="FontFile" uid="uid://1j33do63wgqo" path="res://data/PixelifySans-VariableFont_wght.ttf" id="1_14xi4"]
+[ext_resource type="FontFile" uid="uid://mvt22p5giale" path="res://data/NFPixels-Regular.ttf" id="1_14xi4"]
 
 [resource]
 default_font = ExtResource("1_14xi4")
-default_font_size = 16
+default_font_size = 30

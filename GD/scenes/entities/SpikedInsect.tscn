@@ -5,9 +5,11 @@
 
 [node name="SpikedInsect" unique_id=733645916 instance=ExtResource("1_8fs4m")]
 script = ExtResource("2_eky1y")
-max_health = 10.0
+reflect_damage = 50.0
+max_health = 5.0
 reward_money = 2.0
 
-[node name="Sprite2D" parent="." index="1" unique_id=1054112084]
-modulate = Color(1, 0.15294118, 0.16078432, 1)
-self_modulate = Color(1, 0.15294118, 0.16078432, 1)
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=1352414078]
+self_modulate = Color(0.72674316, 0.2820605, 0.22663644, 1)
+animation = &"move_left"
+frame_progress = 0.32398793

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="YggdrasilGroup" format=3 uid="uid://ctqm2i1tgi681"]
+
+[ext_resource type="Script" uid="uid://bt8qpikafu7xg" path="res://addons/yggdrasil/scripts/resources/yggdrasil_group.gd" id="1_8i2xa"]
+[ext_resource type="Resource" uid="uid://crek3d55l1fnq" path="res://yggdrasil_data/Hand/stärkerer_schlag.tres" id="2_c5nvb"]
+[ext_resource type="Resource" uid="uid://dckqoem5r5nca" path="res://yggdrasil_data/Hand/abklingzeit_verkürzen.tres" id="3_01yry"]
+
+[resource]
+script = ExtResource("1_8i2xa")
+name = "Hand"
+trees = [ExtResource("2_c5nvb"), ExtResource("3_01yry")]

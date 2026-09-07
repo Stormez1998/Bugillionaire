@@ -3,10 +3,22 @@
 [ext_resource type="Script" uid="uid://sgnpxhuxuwtt" path="res://scripts/ui/ui.gd" id="1_d2gw2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7nbg2"]
-font_size = 30
+font_size = 40
+font_color = Color(0.81235796, 0.68193525, 0.40969387, 1)
+stacked_outline_count = 1
+stacked_shadow_count = 1
+stacked_outline_0/size = 5
+stacked_outline_0/color = Color(1, 1, 1, 1)
+stacked_shadow_0/color = Color(0.8557537, 0.7293017, 0.46366817, 1)
+stacked_shadow_0/outline_size = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_d2gw2"]
-font_size = 30
+font_size = 80
+stacked_outline_count = 1
+stacked_shadow_count = 1
+stacked_outline_0/size = 5
+stacked_shadow_0/color = Color(0.20588136, 0.57030857, 0.9181128, 1)
+stacked_shadow_0/outline_size = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_jk7c4"]
 font_size = 80
@@ -30,21 +42,28 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="MoneyLabel" type="Label" parent="." unique_id=1151308318]
-offset_right = 67.0
-offset_bottom = 23.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -49.0
+offset_right = 96.0
+grow_vertical = 0
 text = "Geld: "
 label_settings = SubResource("LabelSettings_7nbg2")
 
 [node name="TimeLabel" type="Label" parent="." unique_id=1541020582]
-offset_top = 45.0
-offset_right = 73.0
-offset_bottom = 82.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_right = 88.0
+offset_bottom = 96.0
+grow_horizontal = 2
 text = "Zeit: "
 label_settings = SubResource("LabelSettings_d2gw2")
 
 [node name="EndScreen" type="Panel" parent="." unique_id=1209389323]
 visible = false
-self_modulate = Color(0.20550814, 0.55513453, 0.68156064, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -58,19 +77,19 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.935328, 1.0139961)
 
-[node name="ColorRect" type="ColorRect" parent="EndScreen" unique_id=251540405]
+[node name="ColorRect" type="ColorRect" parent="EndScreen" unique_id=2093801246]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -17979.79
-offset_top = -4341.2393
+offset_top = -4341.2397
 offset_right = -17979.79
-offset_bottom = -4341.2393
+offset_bottom = -4341.2397
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(30.89326, 15.871853)
-color = Color(0.6655766, 0, 0.008193297, 1)
+color = Color(1.92523e-07, 0.61519164, 0.49420583, 1)
 
 [node name="EndTitle" type="Label" parent="EndScreen" unique_id=1350711539]
 layout_mode = 1
@@ -85,7 +104,6 @@ offset_right = 289.0
 offset_bottom = -203.96649
 grow_horizontal = 2
 grow_vertical = 2
-text = "Runde Beendet"
 label_settings = SubResource("LabelSettings_jk7c4")
 
 [node name="ResultLabel" type="Label" parent="EndScreen" unique_id=1556501844]

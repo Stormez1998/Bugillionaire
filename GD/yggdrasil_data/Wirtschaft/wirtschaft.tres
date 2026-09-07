@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="YggdrasilGroup" format=3 uid="uid://dnbnoc8ahfs1f"]
+
+[ext_resource type="Script" uid="uid://bt8qpikafu7xg" path="res://addons/yggdrasil/scripts/resources/yggdrasil_group.gd" id="1_kccd6"]
+[ext_resource type="Resource" uid="uid://cqv27inxdebt6" path="res://yggdrasil_data/Wirtschaft/erhöhe_prestige_multiplier.tres" id="2_71cfi"]
+
+[resource]
+script = ExtResource("1_kccd6")
+name = "Wirtschaft"
+trees = [ExtResource("2_71cfi")]

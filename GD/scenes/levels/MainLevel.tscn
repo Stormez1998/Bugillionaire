@@ -8,6 +8,15 @@
 [node name="MainLevel" type="Node2D" unique_id=2085024147]
 script = ExtResource("1_ngxpg")
 
+[node name="SpawnArea" type="ReferenceRect" parent="." unique_id=421314335]
+visible = false
+offset_left = 374.99997
+offset_top = 211.99998
+offset_right = 1645.0
+offset_bottom = 892.0
+scale = Vector2(0.39999986, 0.39999986)
+border_width = 5.0
+
 [node name="InsectSpawner" type="Timer" parent="." unique_id=233460367]
 wait_time = 1.5
 autostart = true
@@ -25,6 +34,7 @@ one_shot = true
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=863503675]
+visible = false
 position = Vector2(578, 326)
 
 [connection signal="timeout" from="InsectSpawner" to="." method="_on_insect_spawner_timeout"]

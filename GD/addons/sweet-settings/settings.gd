@@ -34,7 +34,7 @@ func _ready() -> void:
 	body.show()
 	_on_tab_changed(0)
 	
-	exit_button.pressed.connect(_on_exit_button_pressed)
+	#exit_button.pressed.connect(_on_exit_button_pressed)
 #================================================================================#
 
 # FOCUS
@@ -211,6 +211,7 @@ func _refresh_disabled_states() -> void:
 #================================================================================#
 func _on_exit_button_pressed():
 	SweetSettings.flush()
+	hide()
 	# navigate back to other menu or whatever
 	
 #================================================================================#

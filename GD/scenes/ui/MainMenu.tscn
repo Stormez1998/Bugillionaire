@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://cojvfw6w48q08" path="res://scripts/ui/main_menu.gd" id="1_vjtqc"]
 [ext_resource type="PackedScene" uid="uid://cbaptu3r6kh5j" path="res://addons/sweet-settings/settings.tscn" id="2_6jbdy"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_jk7c4"]
+font_size = 80
+
 [node name="MainMenu" type="Control" unique_id=409231279]
 layout_mode = 3
 anchors_preset = 15
@@ -11,6 +14,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vjtqc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1052983695]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17980.0
+offset_top = -4341.0
+offset_right = -17980.0
+offset_bottom = -4341.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(30.89326, 15.871853)
+color = Color(0.16470589, 0.40392157, 0.25882354, 0.7764706)
 
 [node name="Settings" parent="." unique_id=43894109 instance=ExtResource("2_6jbdy")]
 layout_mode = 1
@@ -29,16 +46,25 @@ offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Title" type="Label" parent="MenuPanel" unique_id=1244050489]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Bugillionaire"
+label_settings = SubResource("LabelSettings_jk7c4")
+
 [node name="btn_game_start" type="Button" parent="MenuPanel" unique_id=1859712386]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Spiel Starten"
 
 [node name="btn_settings" type="Button" parent="MenuPanel" unique_id=66033837]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Einstellungen"
 
 [node name="btn_game_quit" type="Button" parent="MenuPanel" unique_id=1241906413]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Spiel Beenden"
 
 [connection signal="pressed" from="MenuPanel/btn_game_start" to="." method="_on_btn_game_start_pressed"]

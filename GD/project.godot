@@ -19,15 +19,20 @@ config/icon="res://assets/sprites/icon.svg"
 
 GameState="*uid://xqe0v66t0ana"
 SweetSettings="*uid://cbnx6yl6yesvy"
+YggdrasilLoader="*uid://dqbvvuokqq4um"
+YggdrasilSerializer="*uid://g5grx5mhggq2"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/sweet-settings/plugin.cfg")
+enabled=PackedStringArray("res://addons/sweet-settings/plugin.cfg", "res://addons/yggdrasil/plugin.cfg")
 
 [file_customization]
 

@@ -1,7 +1,7 @@
 # Erbt die gesamte Logik des Standard-Insekts
 extends "res://scripts/entities/Insect.gd"
 
-var reflect_damage: float = 10.0 # Schaden, den der Spieler pro Klick erleidet
+@export var reflect_damage: float = 50.0 # Schaden, den der Spieler pro Klick erleidet
 
 func _ready() -> void:
 	# Wir können Werte aus der Elternklasse überschreiben, z.B. mehr HP

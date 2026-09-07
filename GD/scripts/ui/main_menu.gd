@@ -16,6 +16,7 @@ func _on_settings_closed() -> void:
 func _on_btn_game_start_pressed() -> void:
 	print("[MainMenu] Start-Button geklickt. Wechsle zu MainLevel...")
 	# Lädt die Hauptspielszene und ersetzt das aktuelle Menü im Speicher
+	GameState.reset_full_game()
 	get_tree().change_scene_to_file("res://scenes/levels/MainLevel.tscn")
 
 func _on_btn_game_quit_pressed() -> void:

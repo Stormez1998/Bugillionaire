@@ -3,32 +3,41 @@ extends Node2D
 var basic_insect_scene: PackedScene = preload("res://scenes/entities/Insect.tscn")
 var spiked_insect_scene: PackedScene = preload("res://scenes/entities/SpikedInsect.tscn")
 
-# Aktualisierte Referenzen auf die Nodes im Szenenbaum
 @onready var insect_spawner: Timer = $InsectSpawner
 @onready var round_timer: Timer = $RoundTimer
-@onready var ui: CanvasLayer = $Ui # Referenz auf die UI-Szene
 @onready var time_label: Label = $Ui/TimeLabel
+@onready var ui: CanvasLayer = $Ui
 
+# Neue Referenz auf das Rechteck
+@onready var spawn_area: ReferenceRect = $SpawnArea 
 
 func _ready() -> void:
+	GameState.player_died.connect(_on_player_died)
 	print("MainLevel gestartet. Runde beginnt!")
 
 func _process(_delta: float) -> void:
 	if not round_timer.is_stopped():
 		time_label.text = "Zeit: " + str(int(round_timer.time_left)) + "s"
 
-# Hinweis: Stelle sicher, dass das timeout()-Signal des InsectSpawner
-# mit dieser aktualisierten Funktion verbunden ist.
+func _on_player_died() -> void:
+	insect_spawner.stop()
+	round_timer.stop() # Timer zwingend stoppen, da die Runde vorzeitig endet
+	ui.show_end_screen("death")
+
 func _on_insect_spawner_timeout() -> void:
 	var insect_instance: Area2D
-	# 20% Chance, dass ein Dornenkäfer spawnt
+	
 	if randf() <= 0.2:
 		insect_instance = spiked_insect_scene.instantiate()
 	else:
 		insect_instance = basic_insect_scene.instantiate()
-	#Positionierung
-	var random_x: float = randf_range(50.0, 1100.0)
-	var random_y: float = randf_range(50.0, 600.0)
+	
+	# Auslesen der globalen Grenzen des gezeichneten Rechtecks
+	var rect: Rect2 = spawn_area.get_global_rect()
+	
+	# Dynamische Berechnung basierend auf der Rect-Größe im Editor
+	var random_x: float = randf_range(rect.position.x, rect.position.x + rect.size.x)
+	var random_y: float = randf_range(rect.position.y, rect.position.y + rect.size.y)
 	
 	insect_instance.position = Vector2(random_x, random_y)
 	add_child(insect_instance)
@@ -36,14 +45,4 @@ func _on_insect_spawner_timeout() -> void:
 func _on_round_timer_timeout() -> void:
 	insect_spawner.stop()
 	time_label.text = "Zeit: 0s"
-	print("Runde beendet! InsectSpawner wurde gestoppt.")
-	# Ruft die  Funktion in der UI auf
-	ui.show_end_screen()
-
-#DEV-FEATURE! Instant restart mit "R"-Taste
-func _unhandled_input(event: InputEvent) -> void:
-	# Prüft, ob die Aktion "ui_text_completion_replace" (oft 'R') gedrückt wurde 
-	# Alternativ in den Project Settings einen eigenen Input "restart" anlegen.
-	if event is InputEventKey and event.keycode == KEY_R and event.pressed:
-		print("Instant Neustart ausgelöst!")
-		get_tree().reload_current_scene()
+	ui.show_end_screen("timeout")

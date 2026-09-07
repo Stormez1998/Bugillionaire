@@ -8,3 +8,5 @@ script = ExtResource("1_wyapm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1047972867]
 texture = ExtResource("2_03ryf")
+
+[node name="CooldownTimer" type="Timer" parent="." unique_id=1511012018]
