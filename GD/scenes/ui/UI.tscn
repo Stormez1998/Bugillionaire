@@ -2,19 +2,20 @@
 
 [ext_resource type="Script" uid="uid://sgnpxhuxuwtt" path="res://scripts/ui/ui.gd" id="1_d2gw2"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_7nbg2"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_d2gw2"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_jk7c4"]
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_m01cm"]
+font_size = 40
+
 [node name="Ui" type="CanvasLayer" unique_id=1479590]
 script = ExtResource("1_d2gw2")
-
-[node name="MoneyLabel" type="Label" parent="." unique_id=1151308318]
-offset_right = 67.0
-offset_bottom = 23.0
-text = "Geld: "
-
-[node name="TimeLabel" type="Label" parent="." unique_id=1541020582]
-offset_top = 29.0
-offset_right = 57.0
-offset_bottom = 52.0
-text = "Zeit: "
 
 [node name="PlayerLifeBar" type="ProgressBar" parent="." unique_id=1003364023]
 anchors_preset = 7
@@ -27,4 +28,112 @@ offset_top = -27.0
 offset_right = 163.5
 grow_horizontal = 2
 grow_vertical = 0
-show_percentage = false
+
+[node name="MoneyLabel" type="Label" parent="." unique_id=1151308318]
+offset_right = 67.0
+offset_bottom = 23.0
+text = "Geld: "
+label_settings = SubResource("LabelSettings_7nbg2")
+
+[node name="TimeLabel" type="Label" parent="." unique_id=1541020582]
+offset_top = 45.0
+offset_right = 73.0
+offset_bottom = 82.0
+text = "Zeit: "
+label_settings = SubResource("LabelSettings_d2gw2")
+
+[node name="EndScreen" type="Panel" parent="." unique_id=1209389323]
+visible = false
+self_modulate = Color(0.20550814, 0.55513453, 0.68156064, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -321.0
+offset_right = 663.0
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.935328, 1.0139961)
+
+[node name="ColorRect" type="ColorRect" parent="EndScreen" unique_id=251540405]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17979.79
+offset_top = -4341.2393
+offset_right = -17979.79
+offset_bottom = -4341.2393
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(30.89326, 15.871853)
+color = Color(0.6655766, 0, 0.008193297, 1)
+
+[node name="EndTitle" type="Label" parent="EndScreen" unique_id=1350711539]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.0
+offset_top = -300.96652
+offset_right = 289.0
+offset_bottom = -203.96649
+grow_horizontal = 2
+grow_vertical = 2
+text = "Runde Beendet"
+label_settings = SubResource("LabelSettings_jk7c4")
+
+[node name="ResultLabel" type="Label" parent="EndScreen" unique_id=1556501844]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.52881
+offset_top = -214.4355
+offset_right = 172.47119
+offset_bottom = -165.4355
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Verdientes Geld: 0"
+label_settings = SubResource("LabelSettings_m01cm")
+
+[node name="BtnNextRound" type="Button" parent="EndScreen" unique_id=766456702]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 112.260086
+offset_top = -332.2237
+offset_right = -626.7399
+offset_bottom = -232.2237
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Neue Runde"
+
+[node name="BtnUpgrades" type="Button" parent="EndScreen" unique_id=1754830096]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 628.6565
+offset_top = -332.2237
+offset_right = -110.343506
+offset_bottom = -232.2237
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Upgrades"
+
+[connection signal="pressed" from="EndScreen/BtnNextRound" to="." method="_on_btn_next_round_pressed"]
+[connection signal="pressed" from="EndScreen/BtnUpgrades" to="." method="_on_btn_upgrades_pressed"]

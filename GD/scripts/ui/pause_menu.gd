@@ -1,8 +1,23 @@
 extends CanvasLayer
 
+@onready var menu_panel: VBoxContainer = $MenuPanel
+@onready var settings_menu: VBoxContainer = $Settings
+
+
 func _ready() -> void:
-	# Das Menü ist zu Beginn unsichtbar
+	settings_menu.hide()
+	# Neu: Lauscht darauf, ob das Settings-Menü unsichtbar wird (z. B. durch seinen Exit-Button)
+	settings_menu.hidden.connect(_on_settings_closed)
 	hide()
+
+func _on_btn_settings_pressed() -> void:
+	menu_panel.hide()
+	settings_menu.show()
+
+# Wird automatisch gefeuert, wenn die Settings geschlossen werden
+func _on_settings_closed() -> void:
+	menu_panel.show()
+	print("Settings geschlossen, Hauptmenü wieder aktiv.")
 
 # _unhandled_input fängt Tastendrücke ab, die nicht schon von anderen UIs geschluckt wurden
 func _unhandled_input(event: InputEvent) -> void:

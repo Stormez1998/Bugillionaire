@@ -24,5 +24,8 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=863503675]
+position = Vector2(578, 326)
+
 [connection signal="timeout" from="InsectSpawner" to="." method="_on_insect_spawner_timeout"]
 [connection signal="timeout" from="RoundTimer" to="." method="_on_round_timer_timeout"]

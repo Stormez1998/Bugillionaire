@@ -6,7 +6,9 @@ var spiked_insect_scene: PackedScene = preload("res://scenes/entities/SpikedInse
 # Aktualisierte Referenzen auf die Nodes im Szenenbaum
 @onready var insect_spawner: Timer = $InsectSpawner
 @onready var round_timer: Timer = $RoundTimer
+@onready var ui: CanvasLayer = $Ui # Referenz auf die UI-Szene
 @onready var time_label: Label = $Ui/TimeLabel
+
 
 func _ready() -> void:
 	print("MainLevel gestartet. Runde beginnt!")
@@ -32,9 +34,11 @@ func _on_insect_spawner_timeout() -> void:
 	add_child(insect_instance)
 
 func _on_round_timer_timeout() -> void:
-	insect_spawner.stop() # Stoppt den umbenannten Spawner
+	insect_spawner.stop()
 	time_label.text = "Zeit: 0s"
 	print("Runde beendet! InsectSpawner wurde gestoppt.")
+	# Ruft die  Funktion in der UI auf
+	ui.show_end_screen()
 
 #DEV-FEATURE! Instant restart mit "R"-Taste
 func _unhandled_input(event: InputEvent) -> void:

@@ -1,0 +1,111 @@
+{
+	"version": 1.0,
+	"sections": [
+		{
+			"id": "gameplay",
+			"settings": [
+				{
+					"key": "language",
+					"type": "option",
+					"options_source": "project_locales",
+					"default_source": "system_locale",
+					"default": "en"
+				},
+				{
+					"key": "sensitivity",
+					"type": "numeric_slider",
+					"default": 1.0,
+					"min": 0.1,
+					"max": 5.0,
+					"step": 0.1
+				}
+			],
+			"footer": [
+				"section_reset"
+			]
+		},
+		{
+			"id": "graphics",
+			"settings": [
+				{
+					"key": "resolution",
+					"type": "option",
+					"options_source": "display_resolutions",
+					"default_source": "primary_resolution",
+					"default": "1920x1080",
+					"options": [
+						"1920x1080",
+						"1280x720"
+					],
+					"disabled_when": {
+						"display_mode": [
+							1.0,
+							2.0
+						]
+					}
+				},
+				{
+					"key": "display_mode",
+					"type": "option",
+					"default": 1.0,
+					"options": {
+						"display_mode_windowed": 0.0,
+						"display_mode_borderless": 1.0,
+						"display_mode_fullscreen": 2.0
+					}
+				},
+				{
+					"key": "vsync",
+					"type": "toggle",
+					"default": false
+				},
+				{
+					"key": "max_fps",
+					"type": "spinbox",
+					"default": 60.0,
+					"min": 30.0,
+					"max": 240.0,
+					"step": 1.0
+				}
+			],
+			"footer": [
+				"section_reset"
+			]
+		},
+		{
+			"id": "audio",
+			"settings": [
+				{
+					"type": "numeric_slider",
+					"default": 0.1,
+					"min": 0.0,
+					"max": 1.0,
+					"step": 0.01,
+					"suffix": "%",
+					"display_scale": 100.0,
+					"keys": [
+						"master_volume"
+					]
+				}
+			],
+			"footer": [
+				"section_reset"
+			]
+		},
+		{
+			"id": "controls",
+			"_comment": "Keybind defaults come from Project Settings Input Map. settings_source injects actions at load.",
+			"settings_source": "input_map",
+			"exclude_prefixes": [
+				"ui_"
+			],
+			"settings": [],
+			"header": [
+				"control_header"
+			],
+			"footer": [
+				"section_reset"
+			]
+		}
+	]
+}
