@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="YggdrasilTree" format=3 uid="uid://bef2erj6jsiht"]
+
+[ext_resource type="Texture2D" uid="uid://bg42depg5dxw6" path="res://assets/sprites/UI/1 Icons/11/Skillicon11_11.png" id="1_bmogf"]
+[ext_resource type="Script" uid="uid://e7tfsgtpbob6" path="res://addons/yggdrasil/scripts/resources/yggdrasil_tree.gd" id="1_h2riw"]
+[ext_resource type="Texture2D" uid="uid://45013pkhupqx" path="res://assets/sprites/css-pattern-by-magicpattern (2).png" id="1_lvwdd"]
+[ext_resource type="Script" uid="uid://cri0khs3wypbm" path="res://addons/yggdrasil/scripts/resources/yggdrasil_attribute.gd" id="1_qql7r"]
+[ext_resource type="Script" uid="uid://dsrk0byl742tb" path="res://addons/yggdrasil/scripts/resources/yggdrasil_node.gd" id="3_qql7r"]
+
+[sub_resource type="Resource" id="Resource_lvwdd"]
+script = ExtResource("1_qql7r")
+id = "player_max_health"
+name = "player_max_health"
+effect = "Maxplayerleben =#"
+value_count = 1
+
+[sub_resource type="Resource" id="Resource_1oyof"]
+script = ExtResource("1_qql7r")
+id = "cost"
+name = "Kosten für Upgrades"
+effect = "Cost = #"
+value_count = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvwdd"]
+atlas = ExtResource("1_bmogf")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="Resource" id="Resource_3hod0"]
+script = ExtResource("3_qql7r")
+is_root = true
+id = 1
+external_id = "max_hp"
+name = "Max HP"
+type = 1
+icon = SubResource("AtlasTexture_lvwdd")
+line_data = {}
+out_nodes = []
+in_nodes = []
+attributes = {
+"cost": [0],
+"player_max_health": [150]
+}
+max_allocations = 1
+
+[resource]
+script = ExtResource("1_h2riw")
+id = "general_tree"
+name = "GeneralTree"
+bg_color = Color(0.8980392, 0.8980392, 0.96862745, 1)
+bg_texture = ExtResource("1_lvwdd")
+id_counter = 4
+icon_sizes = {
+0: Vector2(32, 32),
+1: Vector2(32, 32),
+2: Vector2(32, 32)
+}
+icons = {
+0: null,
+1: ExtResource("1_bmogf"),
+2: null
+}
+node_size = {
+0: Vector2(32, 32),
+1: Vector2(32, 32),
+2: Vector2(32, 32)
+}
+nodes = [SubResource("Resource_3hod0")]
+decorations = []
+prefabs = {}
+attributes = {
+"cost": SubResource("Resource_1oyof"),
+"player_max_health": SubResource("Resource_lvwdd")
+}

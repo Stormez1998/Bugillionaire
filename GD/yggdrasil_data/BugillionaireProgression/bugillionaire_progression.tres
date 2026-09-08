@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="YggdrasilGroup" format=3 uid="uid://cc28umafooc2v"]
+
+[ext_resource type="Script" uid="uid://bt8qpikafu7xg" path="res://addons/yggdrasil/scripts/resources/yggdrasil_group.gd" id="1_dbvp8"]
+[ext_resource type="Resource" uid="uid://bef2erj6jsiht" path="res://yggdrasil_data/BugillionaireProgression/general_tree.tres" id="2_5rixs"]
+[ext_resource type="Resource" uid="uid://cb6swwa6o53p4" path="res://yggdrasil_data/BugillionaireProgression/weapon_tree.tres" id="3_perrg"]
+
+[resource]
+script = ExtResource("1_dbvp8")
+name = "BugillionaireProgression"
+trees = [ExtResource("2_5rixs"), ExtResource("3_perrg")]

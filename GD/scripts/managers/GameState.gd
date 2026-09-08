@@ -15,6 +15,16 @@ var player_health: float = 100.0
 var player_max_hearts: int = 3
 var player_hearts: int = 3
 
+func _unhandled_input(event: InputEvent) -> void:
+	# Prüft, ob das Spiel aus dem Editor heraus gestartet wurde (Debug-Modus)
+	if OS.has_feature("debug"):
+		# Reagiert gezielt auf die physische Leertaste (ohne gedrückt zu halten / echo)
+		if event is InputEventKey and event.pressed and not event.echo:
+			if event.keycode == KEY_SPACE:
+				# Nutzt die bestehende Funktion, damit UI-Signale und Multiplikatoren greifen
+				add_money(10.0) 
+				print("[Admin] 10 Geld generiert! Aktuell: ", current_money)
+
 # Funktion für das Zurücksetzen am Rundenanfang
 func reset_round() -> void:
 	player_health = player_max_health

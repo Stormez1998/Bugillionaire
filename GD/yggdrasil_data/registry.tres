@@ -1,11 +1,8 @@
 [gd_resource type="Resource" script_class="YggdrasilRegistry" format=3 uid="uid://dg786mbvqjsfk"]
 
 [ext_resource type="Script" uid="uid://f8j2ty6n8q1d" path="res://addons/yggdrasil/scripts/resources/yggdrasil_registry.gd" id="1_t36cu"]
-[ext_resource type="Resource" uid="uid://ctqm2i1tgi681" path="res://yggdrasil_data/Hand/hand.tres" id="1_tvxfb"]
-[ext_resource type="Resource" uid="uid://d3d5an64u6j8w" path="res://yggdrasil_data/Defensive/defensive.tres" id="2_6bk50"]
-[ext_resource type="Resource" uid="uid://ci5qohqpyrxp3" path="res://yggdrasil_data/Spawns&Progression/spawns&progression.tres" id="3_h20lc"]
-[ext_resource type="Resource" uid="uid://dnbnoc8ahfs1f" path="res://yggdrasil_data/Wirtschaft/wirtschaft.tres" id="4_gv1v0"]
+[ext_resource type="Resource" uid="uid://cc28umafooc2v" path="res://yggdrasil_data/BugillionaireProgression/bugillionaire_progression.tres" id="1_tvxfb"]
 
 [resource]
 script = ExtResource("1_t36cu")
-groups = [ExtResource("1_tvxfb"), ExtResource("2_6bk50"), ExtResource("3_h20lc"), ExtResource("4_gv1v0")]
+groups = [ExtResource("1_tvxfb")]
