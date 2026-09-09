@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bej7ru1dv26py"]
+
+[ext_resource type="Script" uid="uid://dkdio5frrg6fp" path="res://scripts/upgrades/upgrade_button.gd" id="1_1q8pq"]
+
+[node name="UpgradeButton" type="Button" unique_id=1009984181]
+offset_right = 192.0
+offset_bottom = 64.0
+script = ExtResource("1_1q8pq")

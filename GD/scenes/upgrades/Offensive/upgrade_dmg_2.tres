@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://blddlsabetpow"]
+
+[ext_resource type="Script" uid="uid://5q07avoggxj5" path="res://scripts/UpgradeData.gd" id="1_rut8w"]
+
+[resource]
+script = ExtResource("1_rut8w")
+category = "Offensive"
+id = "dmg_2"
+display_name = "Titan-Schlag"
+cost = 75.0
+effect_type = "damage"
+effect_value = 10.0
+prerequisite_id = "dmg_1"
+description = "Erhöht den Basis-Schaden um 10."
+metadata/_custom_type_script = "uid://5q07avoggxj5"

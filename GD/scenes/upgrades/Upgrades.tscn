@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dfxrhgye6fqpj"]
+
+[ext_resource type="Script" uid="uid://brsnd6c4dnwiy" path="res://scripts/ui/upgrades.gd" id="1_a3nj2"]
+[ext_resource type="PackedScene" uid="uid://bej7ru1dv26py" path="res://scenes/upgrades/UpgradeButton.tscn" id="2_2rl2o"]
+[ext_resource type="Script" uid="uid://5q07avoggxj5" path="res://scripts/UpgradeData.gd" id="3_kngyc"]
+[ext_resource type="Resource" uid="uid://770wfvxlwqlt" path="res://scenes/upgrades/Offensive/upgrade_dmg_1.tres" id="4_emhlr"]
+[ext_resource type="Resource" uid="uid://blddlsabetpow" path="res://scenes/upgrades/Offensive/upgrade_dmg_2.tres" id="5_ife02"]
+[ext_resource type="Resource" uid="uid://4sxni4cwtbm5" path="res://scenes/upgrades/Offensive/upgrade_speed_1.tres" id="6_je4uk"]
+[ext_resource type="Resource" uid="uid://cudgcjpamm88r" path="res://scenes/upgrades/Defensive/upgrade_hp_1.tres" id="7_8wuff"]
+[ext_resource type="Resource" uid="uid://l3mp1v87hu76" path="res://scenes/upgrades/Defensive/upgrade_heart_1.tres" id="8_clnay"]
+[ext_resource type="Resource" uid="uid://2le6lweal1qo" path="res://scenes/upgrades/Progression/upgrade_unlock_spike.tres" id="9_ayijx"]
+[ext_resource type="Resource" uid="uid://cb6jwjxpy1ygx" path="res://scenes/upgrades/Wirtschaft/upgrade_gold_1.tres" id="10_f1prg"]
+[ext_resource type="Texture2D" uid="uid://clprep4evf6f8" path="res://assets/sprites/UI/1 Icons/5/Skillicon5_02.png" id="11_2rl2o"]
+
+[node name="Upgrades" type="Control" unique_id=737449523]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a3nj2")
+upgrade_button_scene = ExtResource("2_2rl2o")
+upgrade_database = Array[ExtResource("3_kngyc")]([ExtResource("4_emhlr"), ExtResource("5_ife02"), ExtResource("6_je4uk"), ExtResource("8_clnay"), ExtResource("7_8wuff"), ExtResource("9_ayijx"), ExtResource("10_f1prg")])
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1733962828]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=1118388955]
+layout_mode = 2
+
+[node name="BtnNextRound" type="Button" parent="." unique_id=702122151]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -469.0
+offset_top = -68.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Neue Runde starten"
+icon = ExtResource("11_2rl2o")
+icon_alignment = 2

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://4sxni4cwtbm5"]
+
+[ext_resource type="Script" uid="uid://5q07avoggxj5" path="res://scripts/UpgradeData.gd" id="1_ho03h"]
+
+[resource]
+script = ExtResource("1_ho03h")
+category = "Offensive"
+id = "speed_1"
+display_name = "Kaffee-Schub"
+cost = 50.0
+effect_type = "click_speed"
+effect_value = 0.2
+description = "Reduziert den Click-Cooldown um 0.2s."
+metadata/_custom_type_script = "uid://5q07avoggxj5"

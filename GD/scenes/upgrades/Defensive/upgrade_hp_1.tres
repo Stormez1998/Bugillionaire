@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cudgcjpamm88r"]
+
+[ext_resource type="Script" uid="uid://5q07avoggxj5" path="res://scripts/UpgradeData.gd" id="1_htg4s"]
+
+[resource]
+script = ExtResource("1_htg4s")
+category = "Defensive"
+id = "hp_1"
+display_name = "Dickes Fell"
+cost = 30.0
+effect_type = "max_health"
+effect_value = 25.0
+description = "Erhöht das maximale Leben."
+metadata/_custom_type_script = "uid://5q07avoggxj5"

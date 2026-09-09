@@ -53,4 +53,4 @@ func _on_btn_next_round_pressed() -> void:
 
 func _on_btn_upgrades_pressed() -> void:
 	print("[UPGRADES]: In der Erschaffung")
-	get_tree().change_scene_to_file("res://scenes/ui/Upgrades.tscn")
+	get_tree().change_scene_to_file("uid://dfxrhgye6fqpj")

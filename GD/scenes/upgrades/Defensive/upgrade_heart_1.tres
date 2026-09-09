@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://l3mp1v87hu76"]
+
+[ext_resource type="Script" uid="uid://5q07avoggxj5" path="res://scripts/UpgradeData.gd" id="1_hf6a4"]
+
+[resource]
+script = ExtResource("1_hf6a4")
+category = "Defensive"
+id = "heart_1"
+display_name = "Extra-Herz"
+cost = 200.0
+effect_type = "max_hearts"
+effect_value = 1.0
+prerequisite_id = "hp_1"
+description = "Gibt dem Spieler ein weiteres Leben."
+metadata/_custom_type_script = "uid://5q07avoggxj5"
