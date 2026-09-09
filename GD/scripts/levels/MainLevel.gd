@@ -12,6 +12,8 @@ var spiked_insect_scene: PackedScene = preload("res://scenes/entities/SpikedInse
 @onready var spawn_area: ReferenceRect = $SpawnArea 
 
 func _ready() -> void:
+	insect_spawner.wait_time = 1.5 * GameState.spawn_rate_multiplier
+	insect_spawner.start()
 	GameState.player_died.connect(_on_player_died)
 	print("MainLevel gestartet. Runde beginnt!")
 
@@ -26,8 +28,8 @@ func _on_player_died() -> void:
 
 func _on_insect_spawner_timeout() -> void:
 	var insect_instance: Area2D
-	
-	if randf() <= 0.2:
+	# Prüft, ob der Dornenkäfer freigeschaltet ist, bevor er in den Pool aufgenommen wird
+	if GameState.spiked_insect_unlocked and randf() <= 0.1:
 		insect_instance = spiked_insect_scene.instantiate()
 	else:
 		insect_instance = basic_insect_scene.instantiate()

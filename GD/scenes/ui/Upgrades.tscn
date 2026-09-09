@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brsnd6c4dnwiy" path="res://scripts/ui/upgrades.gd" id="1_0unx1"]
 
-[node name="Upgrades" type="Control" unique_id=737449523 node_paths=PackedStringArray("tree_parent")]
+[node name="Upgrades" type="Control" unique_id=737449523]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,4 +10,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0unx1")
-tree_parent = NodePath(".")

@@ -9,6 +9,10 @@ var current_money: float = 0.0
 var total_xp: float = 0.0
 var prestige_multiplier: float = 1.0
 
+# Variablen für die Insecten
+var spiked_insect_unlocked: bool = false
+var spawn_rate_multiplier: float = 1.0 # 1.0 = Standard, kleiner = schnellerer Spawn
+
 # Variablen für das Spielerleben
 var player_max_health: float = 100.0
 var player_health: float = 100.0

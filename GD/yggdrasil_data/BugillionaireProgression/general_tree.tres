@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://45013pkhupqx" path="res://assets/sprites/css-pattern-by-magicpattern (2).png" id="1_lvwdd"]
 [ext_resource type="Script" uid="uid://cri0khs3wypbm" path="res://addons/yggdrasil/scripts/resources/yggdrasil_attribute.gd" id="1_qql7r"]
 [ext_resource type="Script" uid="uid://dsrk0byl742tb" path="res://addons/yggdrasil/scripts/resources/yggdrasil_node.gd" id="3_qql7r"]
+[ext_resource type="Texture2D" uid="uid://do1occ54m41fj" path="res://addons/yggdrasil/blank_icon.png" id="5_qql7r"]
 
 [sub_resource type="Resource" id="Resource_lvwdd"]
 script = ExtResource("1_qql7r")
@@ -15,10 +16,16 @@ value_count = 1
 
 [sub_resource type="Resource" id="Resource_1oyof"]
 script = ExtResource("1_qql7r")
-id = "cost"
+id = "costs"
 name = "Kosten für Upgrades"
 effect = "Cost = #"
 value_count = 1
+
+[sub_resource type="Resource" id="Resource_73lkv"]
+script = ExtResource("1_qql7r")
+id = "spiked_insect_unlocked"
+name = "spiked_insect_unlocked"
+effect = "Unlocks Spiked Insects"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvwdd"]
 atlas = ExtResource("1_bmogf")
@@ -28,7 +35,7 @@ region = Rect2(0, 0, 40, 40)
 script = ExtResource("3_qql7r")
 is_root = true
 id = 1
-external_id = "max_hp"
+external_id = "Max HP"
 name = "Max HP"
 type = 1
 icon = SubResource("AtlasTexture_lvwdd")
@@ -36,8 +43,23 @@ line_data = {}
 out_nodes = []
 in_nodes = []
 attributes = {
-"cost": [0],
+"costs": [10],
 "player_max_health": [150]
+}
+max_allocations = 1
+
+[sub_resource type="Resource" id="Resource_nf5we"]
+script = ExtResource("3_qql7r")
+id = 5
+name = "Node_5"
+icon = ExtResource("5_qql7r")
+position = Vector2(41, 10)
+line_data = {}
+out_nodes = []
+in_nodes = []
+attributes = {
+"costs": [1],
+"spiked_insect_unlocked": [1]
 }
 max_allocations = 1
 
@@ -47,7 +69,7 @@ id = "general_tree"
 name = "GeneralTree"
 bg_color = Color(0.8980392, 0.8980392, 0.96862745, 1)
 bg_texture = ExtResource("1_lvwdd")
-id_counter = 4
+id_counter = 5
 icon_sizes = {
 0: Vector2(32, 32),
 1: Vector2(32, 32),
@@ -63,10 +85,11 @@ node_size = {
 1: Vector2(32, 32),
 2: Vector2(32, 32)
 }
-nodes = [SubResource("Resource_3hod0")]
+nodes = [SubResource("Resource_3hod0"), SubResource("Resource_nf5we")]
 decorations = []
 prefabs = {}
 attributes = {
-"cost": SubResource("Resource_1oyof"),
-"player_max_health": SubResource("Resource_lvwdd")
+"costs": SubResource("Resource_1oyof"),
+"player_max_health": SubResource("Resource_lvwdd"),
+"spiked_insect_unlocked": SubResource("Resource_73lkv")
 }

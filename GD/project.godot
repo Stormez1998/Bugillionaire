@@ -19,8 +19,6 @@ config/icon="res://assets/sprites/icon.svg"
 
 GameState="*uid://xqe0v66t0ana"
 SweetSettings="*uid://cbnx6yl6yesvy"
-YggdrasilLoader="*uid://dqbvvuokqq4um"
-YggdrasilSerializer="*uid://g5grx5mhggq2"
 UpgradeManager="*uid://bstupm8c7oouh"
 
 [display]
@@ -33,7 +31,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/sweet-settings/plugin.cfg", "res://addons/yggdrasil/plugin.cfg")
+enabled=PackedStringArray("res://addons/sweet-settings/plugin.cfg")
 
 [file_customization]
 
